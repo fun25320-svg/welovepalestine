@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <!-- ملاحظة: استبدل G-XXXXXXXXXX بمعرف Google Analytics الخاص بك -->
+  
+  <!-- SEO Meta Tags -->
+  <title>We Love Palestine | متجر فلسطيني للمجوهرات والإكسسوارات</title>
+  <meta name="description" content="متجر فلسطيني يقدم قلادات وأساور وميداليات مستوحاة من روح فلسطين. منتجات ذات جودة عالية تعبر عن حب فلسطين والهوية الوطنية.">
+  <meta name="keywords" content="فلسطين, قلادة فلسطين, اسوارة فلسطين, ميدالية فلسطين, منتجات فلسطينية, مجوهرات فلسطين, خريطة فلسطين, حنظلة, قبة الصخرة">
+  <meta name="author" content="We Love Palestine">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="We Love Palestine | متجر فلسطيني للمجوهرات">
+  <meta property="og:description" content="منتجات مستوحاة من روح فلسطين، قلادات وأساور وميداليات تحكي قصة الوطن.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgizggCoSKeq97uoeTg8Ztf8x_Hqo7OzXlp2c4RPkRVr9S_9WmcRqoosX18hW31kqDN8WsipjgJPIeeGcxuXQHhQ_ScIGV7n75AP38cqoahWWlmm1keGysbhGGJ8V8QiS-zl9ok-sXmCR1zLrGG2H6rulMWGThTCywl6drKMD6IJ2mUEQEMESx1_iXbpw/s1168/1000015559.jpg">
+  
+  <link rel="icon" type="image/png" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhxPGlMsOBcvgMsBMH0QfpQnOPB2kdvBEhb2uk8bXZSE5eZEgA3ybYVgrkewH3LsGkPHgKILb_-FD9bjUYHWChz0gVWR7dw626rHSz-NKUzZXJxQesUrBlYOKjwKiwLYsRa4rcU-RPl8TmMJ7zMuYBHg-PaIR4yBnA2WhN1WPk0tq9no7Fa2T_Q9WoceA/s512/1000015721.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: #0a0a0a;
+      color: #f0ece0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 40px,
+          rgba(0,100,0,0.03) 40px,
+          rgba(0,100,0,0.03) 80px
+        );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page-section {
+      display: block !important;
+      min-height: 100vh;
+      position: relative;
+      z-index: 1;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 1rem 2rem;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    nav a {
+      color: #c8c0a8;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      padding: 0.4rem 1rem;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    nav a:hover, nav a.active {
+      color: #fff;
+      background: rgba(0, 120, 0, 0.3);
+    }
+
+    .lang-switch {
+      display: flex;
+      gap: 0.5rem;
+      margin-right: 1rem;
+      margin-left: 1rem;
+      background: rgba(30,30,30,0.7);
+      padding: 0.3rem 0.8rem;
+      border-radius: 40px;
+      backdrop-filter: blur(4px);
+    }
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: #aaa;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .lang-btn.active-lang {
+      background: #4a7a4a;
+      color: white;
+      box-shadow: 0 0 6px rgba(74,122,74,0.5);
+    }
+    .lang-btn:hover:not(.active-lang) {
+      color: white;
+      background: #2c4a2c;
+    }
+
+    /* ========== HOME PAGE ========== */
+    #home {
+      direction: ltr;
+    }
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 90vh;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .flag-stripe {
+      width: 80px;
+      height: 6px;
+      border-radius: 3px;
+      margin-bottom: 2.5rem;
+      background: linear-gradient(to right, #000 25%, #fff 25%, #fff 50%, #008000 50%, #008000 75%, #e00 75%);
+      box-shadow: 0 0 30px rgba(0,128,0,0.3);
+      animation: fadeIn 1s ease forwards;
+    }
+
+    h1 {
+      font-family: 'Amiri', serif;
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      animation: slideUp 0.8s ease forwards;
+      text-shadow: 0 2px 40px rgba(0,128,0,0.4);
+    }
+
+    h2 {
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      font-weight: 300;
+      color: #a0a890;
+      letter-spacing: 0.15em;
+      animation: slideUp 1s ease forwards;
+      text-transform: uppercase;
+    }
+
+    .divider {
+      width: 2px;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, #ff0000, #ff0000, transparent);
+      margin: 3rem auto;
+      animation: grow 1.2s ease forwards, glow 0.8s ease-in-out infinite alternate;
+      box-shadow: 0 0 5px #ff0000;
+      border-radius: 2px;
+    }
+
+    @keyframes grow {
+      from { transform: scaleY(0); opacity: 0; }
+      to { transform: scaleY(1); opacity: 1; }
+    }
+
+    @keyframes glow {
+      from { 
+        box-shadow: 0 0 15px #ff0000, 0 0 25px #ff0000;
+        background: linear-gradient(to bottom, transparent, #ff0000, #ff0000, transparent);
+      }
+      to { 
+        box-shadow: 0 0 40px #ff0000, 0 0 70px #ff0000, 0 0 100px #ff3300;
+        background: linear-gradient(to bottom, transparent, #ff4444, #ff2222, transparent);
+      }
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      color: #6a8a6a;
+      font-style: italic;
+      animation: fadeIn 1.4s ease forwards;
+    }
+
+    .scroll-down {
+      margin-top: 3rem;
+      animation: bounce 2s infinite;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .scroll-down span {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-bottom: 2px solid #4a7a4a;
+      border-right: 2px solid #4a7a4a;
+      transform: rotate(45deg);
+      margin: -10px auto;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); opacity: 0.5; }
+      50% { transform: translateY(15px); opacity: 1; }
+    }
+
+    .page-indicator {
+      position: fixed;
+      bottom: 30px;
+      right: 20px;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px);
+      padding: 10px 15px;
+      border-radius: 50px;
+      z-index: 1000;
+      display: flex;
+      gap: 12px;
+    }
+
+    .page-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #555;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .page-dot.active-dot {
+      background: #4a7a4a;
+      width: 14px;
+      height: 14px;
+      box-shadow: 0 0 8px #4a7a4a;
+    }
+
+    /* ========== ABOUT PAGE ========== */
+    #about {
+      direction: rtl;
+    }
+
+    .about-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .founder-name {
+      font-size: 2.5rem;
+      color: #4a7a4a;
+      margin: 1.5rem 0;
+      font-family: 'Amiri', serif;
+    }
+
+    .founder-quote {
+      font-size: 1.2rem;
+      color: #c8c0a8;
+      font-style: italic;
+      margin: 2rem 0;
+      padding: 1.5rem;
+      border-right: 3px solid #4a7a4a;
+      background: rgba(74,122,74,0.1);
+      border-radius: 8px;
+    }
+
+    .story-text {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #aaa;
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    /* ========== CONTACT PAGE ========== */
+    #contact {
+      direction: rtl;
+    }
+
+    /* ========== PRODUCTS PAGE ========== */
+    #products {
+      direction: rtl;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 2rem 4rem;
+    }
+
+    .page-title {
+      font-family: 'Amiri', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      animation: slideUp 0.7s ease forwards;
+      text-shadow: 0 2px 40px rgba(0,128,0,0.3);
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #6a8a6a;
+      font-size: 1rem;
+      margin-bottom: 3rem;
+      animation: slideUp 0.9s ease forwards;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      position: relative;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(4px);
+      cursor: pointer;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      scroll-margin-top: 80px; /* لتجنب تغطية القائمة العلوية */
+    }
+
+    .product-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* تأثير تمييز للمنتج عند الوصول إليه عبر الرابط */
+    .product-card.highlight {
+      box-shadow: 0 0 0 3px #4a7a4a, 0 0 0 6px rgba(74,122,74,0.3);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 0, 0, 0.7),
+        rgba(255, 255, 255, 0.7),
+        rgba(0, 128, 0, 0.7),
+        rgba(255, 0, 0, 0.7),
+        transparent
+      );
+      transition: left 0s;
+      z-index: 10;
+      pointer-events: none;
+      border-radius: 12px;
+    }
+
+    .product-card:hover::before {
+      left: 100%;
+      transition: left 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      background: rgba(0, 128, 0, 0.15);
+      border-color: #e00;
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.35);
+    }
+
+    .product-card:hover .product-img {
+      transform: scale(1.02);
+      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+    }
+
+    .product-card:hover .product-price {
+      color: #fff;
+      text-shadow: 0 0 6px #e00;
+    }
+
+    .product-img {
+      width: 160px;
+      height: 160px;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      transition: all 0.3s;
+      position: relative;
+      z-index: 5;
+      background: rgba(0,0,0,0.1);
+    }
+
+    .product-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 5;
+    }
+
+    .product-desc {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+      position: relative;
+      z-index: 5;
+    }
+
+    .product-price {
+      font-size: 1.2rem;
+      color: #4a7a4a;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 5;
+      transition: all 0.3s;
+    }
+
+    /* أزرار المنتج (اطلب الآن + مشاركة) */
+    .product-actions {
+      display: flex;
+      gap: 0.8rem;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    .buy-btn {
+      background: transparent;
+      border: 1px solid #4a7a4a;
+      color: #4a7a4a;
+      padding: 0.5rem 1.5rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: inherit;
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 15;
+    }
+
+    .buy-btn:hover {
+      background: #4a7a4a;
+      color: #fff;
+      border-color: #fff;
+    }
+
+    .product-card:hover .buy-btn {
+      border-color: #e00;
+      color: #e00;
+    }
+
+    .product-card:hover .buy-btn:hover {
+      background: #e00;
+      color: #fff;
+    }
+
+    /* زر المشاركة */
+    .share-btn {
+      background: transparent;
+      border: 1px solid #888;
+      color: #888;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: inherit;
+      font-size: 0.8rem;
+      position: relative;
+      z-index: 15;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .share-btn:hover {
+      background: #888;
+      color: #fff;
+      border-color: #fff;
+    }
+
+    .product-card:hover .share-btn {
+      border-color: #4a7a4a;
+      color: #4a7a4a;
+    }
+
+    .product-card:hover .share-btn:hover {
+      background: #4a7a4a;
+      color: #fff;
+    }
+
+    /* ========== CONTACT CARDS ========== */
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .card {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.5rem 2rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      text-decoration: none;
+      color: #f0ece0;
+      transition: all 0.3s ease;
+      animation: slideUp 1s ease forwards;
+      opacity: 0;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.3s; }
+    .card:nth-child(4) { animation-delay: 0.4s; }
+
+    .card:hover {
+      background: rgba(0, 128, 0, 0.12);
+      border-color: rgba(0, 128, 0, 0.4);
+      transform: translateX(-6px);
+    }
+
+    .icon {
+      font-size: 2rem;
+      width: 50px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .info h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.2rem;
+    }
+
+    .info p {
+      font-size: 0.9rem;
+      color: #888;
+      font-weight: 300;
+    }
+
+    .arrow {
+      margin-right: auto;
+      margin-left: 0;
+      color: #4a7a4a;
+      font-size: 1.2rem;
+      transition: transform 0.3s;
+    }
+
+    .card:hover .arrow {
+      transform: translateX(-4px);
+    }
+
+    .scroll-top {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #4a7a4a;
+      color: white;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      font-size: 1.5rem;
+      font-weight: bold;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      border: none;
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-top:hover {
+      background: #e00;
+      transform: scale(1.1);
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes grow {
+      from { transform: scaleY(0); opacity: 0; }
+      to { transform: scaleY(1); opacity: 1; }
+    }
+
+    @media (max-width: 650px) {
+      nav { gap: 0.8rem; }
+      .lang-switch { margin: 0; order: 3; width: 100%; justify-content: center; margin-top: 0.5rem; }
+      .page-indicator { bottom: 15px; right: 15px; padding: 6px 12px; }
+      .page-dot { width: 8px; height: 8px; }
+      .page-dot.active-dot { width: 10px; height: 10px; }
+      .page {
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+      }
+      .hero {
+        padding: 5rem 1.5rem 3rem;
+      }
+      .scroll-top {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        bottom: 15px;
+        left: 15px;
+      }
+      .about-content {
+        padding: 1rem;
+      }
+      .founder-name {
+        font-size: 1.8rem;
+      }
+      .product-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .share-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" data-nav="home" class="active" onclick="scrollToPage('home', event)">الرئيسية</a>
+    <a href="#" data-nav="products" onclick="scrollToPage('products', event)">المنتجات</a>
+    <a href="#" data-nav="about" onclick="scrollToPage('about', event)">قصتنا</a>
+    <a href="#" data-nav="contact" onclick="scrollToPage('contact', event)">تواصل معنا</a>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar')">🇸🇦 عربي</button>
+      <button class="lang-btn" data-lang="tr" onclick="setLanguage('tr')">🇹🇷 Türkçe</button>
+      <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">🇬🇧 English</button>
+    </div>
+  </nav>
+
+  <div class="page-indicator" id="pageIndicator">
+    <div class="page-dot active-dot" onclick="scrollToPage('home')"></div>
+    <div class="page-dot" onclick="scrollToPage('products')"></div>
+    <div class="page-dot" onclick="scrollToPage('about')"></div>
+    <div class="page-dot" onclick="scrollToPage('contact')"></div>
+  </div>
+
+  <div class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
+
+  <!-- HOME PAGE -->
+  <div id="home" class="page-section">
+    <section class="hero">
+      <div class="flag-stripe"></div>
+      <h1 id="home-title">أهلاً بكم في زاوية الأرض.. حيثُ نحملُ الوطن في تفاصيلنا الصغيرة</h1>
+      <h2 id="home-subtitle">اكتشف مجموعتنا المختارة من الميداليات والإكسسوارات التي صُنعت بحب، لتبقى فلسطين رفيقة دربك أينما كنت</h2>
+      <div class="divider"></div>
+      <p class="tagline" id="home-tagline">نحب فلسطين 🇵🇸</p>
+      <div class="scroll-down" onclick="scrollToNextPage()">
+        <span></span>
+      </div>
+    </section>
+  </div>
+
+  <!-- PRODUCTS PAGE -->
+  <div id="products" class="page-section">
+    <div class="page">
+      <h1 class="page-title" id="products-title">منتجاتنا</h1>
+      <p class="subtitle" id="products-subtitle">إرثٌ يُقتنى.. وفخرٌ يُرتدى</p>
+
+      <div class="products-grid">
+        <!-- المنتج 1: قلادة فلسطين -->
+        <div id="product-1" class="product-card" data-product-name="قلادة فلسطين" data-product-price="300">
+          <img loading="lazy" class="product-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrt2FRhDiqumYOmzVtD3mSgm9GhDPjvlbLCZTPR4QfcAgmi4KfOW9fKdL6fd-nbBHW84ZgF6-rg25scZlsnbubn62ug77nXRLVxWV3jFXO5uMhKSkOby5wQYzDO9SazYuS7IfLHjKoqhvXGPKUj3ahqo9RFVPh7iFbcY9QwhOuA-Dgx0KAta_njtl8Jg/s1062/1000015531.jpg" alt="Palestine Necklace">
+          <div class="product-title" data-prod="title1">قلادة فلسطين</div>
+          <div class="product-desc" data-prod="desc1">قلادة فلسطين فضية اللون</div>
+          <div class="product-price">₺300</div>
+          <div class="product-actions">
+            <button class="buy-btn" onclick="event.stopPropagation(); orderOnWhatsApp(this)">اطلب الآن</button>
+            <button class="share-btn" onclick="event.stopPropagation(); shareProduct(this)">📤 مشاركة</button>
+          </div>
+        </div>
+
+        <!-- المنتج 2: اسوارة فلسطين -->
+        <div id="product-2" class="product-card" data-product-name="اسوارة فلسطين" data-product-price="150">
+          <img loading="lazy" class="product-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhQ8B2MwY2lWj9cQZBFV-tV53_c9ULJg_a86B_rOYdBJw1Wbda7L4738qz0bICUU1prNhmXB__Igv6VERaPcCmIKg14La7t6q70M7E__KN4Bq6o9QwSB5QkzT85-TjuvXw7U20dCN2sinl01k1a0pLRwDIjGlOw2U-AJ6Y4gadnmKuYXT3bOy-3odeaUA/s1600/1000015530.jpg" alt="Palestine Bracelet">
+          <div class="product-title" data-prod="title2">اسوارة فلسطين</div>
+          <div class="product-desc" data-prod="desc2">اسوارة خريطة فلسطين</div>
+          <div class="product-price">₺150</div>
+          <div class="product-actions">
+            <button class="buy-btn" onclick="event.stopPropagation(); orderOnWhatsApp(this)">اطلب الآن</button>
+            <button class="share-btn" onclick="event.stopPropagation(); shareProduct(this)">📤 مشاركة</button>
+          </div>
+        </div>
+        
+        <!-- المنتج 3: ميدالية خريطة ومفتاح -->
+        <div id="product-3" class="product-card" data-product-name="ميدالية خريطة ومفتاح" data-product-price="100">
+          <img loading="lazy" class="product-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizO25bZ6b4QJX6d6O-GzveYz9X1Q8zwyj9jP-HyWZ4yw_edh_uA7tjntbY1tnxW6mKk6Y0t9BjbQYlseDNc3BWgvt2EcFBnDTuxEybh6Us9MYZTATdGPF33d470wi0E9XdmfLEKZCcg_PW_QI3uF_lswQnhUSPPzl8wR2RXeTqGz1Kg0F2P0OTh3T7cw/s880/1000015529.jpg" alt="Key and Map Medal">
+          <div class="product-title" data-prod="title3">ميدالية خريطة ومفتاح</div>
+          <div class="product-desc" data-prod="desc3">ميدالية مفتاح حق العودة</div>
+          <div class="product-price">₺100</div>
+          <div class="product-actions">
+            <button class="buy-btn" onclick="event.stopPropagation(); orderOnWhatsApp(this)">اطلب الآن</button>
+            <button class="share-btn" onclick="event.stopPropagation(); shareProduct(this)">📤 مشاركة</button>
+          </div>
+        </div>
+
+        <!-- المنتج 4: ميدالية خريطة فلسطين -->
+        <div id="product-4" class="product-card" data-product-name="ميدالية خريطة فلسطين" data-product-price="100">
+          <img loading="lazy" class="product-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhceGHz7lT0mI366VwvTDfN8cN74ncoDFVcGeRB_2yZlu7-lbEA4bLd_PV81bR7Sv9ZwS7CyIkRyf5ZgmW4fq7JaUUJnNYrd4r8lcuG6H6yFX1LBb8NtCRpThggwMmvrZUPlufCAN1w9pdiMGufq_tO1Wc13PURShJKRf_VxvL2zo6L8jftzcX33EVjZA/s935/1000015528.jpg" alt="Palestine Map Medal">
+          <div class="product-title" data-prod="title4">ميدالية خريطة فلسطين</div>
+          <div class="product-desc" data-prod="desc4">ميدالية تذكرنا بفلسطين</div>
+          <div class="product-price">₺100</div>
+          <div class="product-actions">
+            <button class="buy-btn" onclick="event.stopPropagation(); orderOnWhatsApp(this)">اطلب الآن</button>
+            <button class="share-btn" onclick="event.stopPropagation(); shareProduct(this)">📤 مشاركة</button>
+          </div>
+        </div>
+
+        <!-- المنتج 5: ميدالية قبة الصخرة -->
+        <div id="product-5" class="product-card" data-product-name="ميدالية قبة الصخرة" data-product-price="150">
+          <img loading="lazy" class="product-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGKbWiWrpBjz7vp0R7NRld1DN6UNlMC4hdLKY_h1wwReqo-c3bXXAxm60iPkvHL0-P-HTnMb6fedPeE99k5tgygrYKNyU8HhKB2pg26pdMUFPd-quFBHj73YR34pMKenY-O_IW_Hdk8F6YVOimwXlPnUtpIuaR0wUMBXbX1LLqViiBKjM9N9wrfsrg3w/s880/1000015527.jpg" alt="Dome of the Rock Medal">
+          <div class="product-title" data-prod="title5">ميدالية قبة الصخرة</div>
+          <div class="product-desc" data-prod="desc5">قبة الصخرة مع علم فلسطين</div>
+          <div class="product-price">₺150</div>
+          <div class="product-actions">
+            <button class="buy-btn" onclick="event.stopPropagation(); orderOnWhatsApp(this)">اطلب الآن</button>
+            <button class="share-btn" onclick="event.stopPropagation(); shareProduct(this)">📤 مشاركة</button>
+          </div>
+        </div>
+
+        <!-- المنتج 6: ميدالية حنظلة -->
+        <div id="product-6" class="product-card" data-product-name="ميدالية حنظلة" data-product-price="200">
+          <img loading="lazy" class="product-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwV8PmpHEThhOq6devFEb4JEjrZWUn3jOmbymfSGTXVA6auVSvbmAb89YmfsawPoIlXJHWQWHrzKTsnUqeYRmDM22ARqpTjf-BPnyikA9rwd-p2-IpXnNUlu1OXzKHYBxxpYQSWVU5Km-lmY0MW3ZEOvv0oURQfwCSNYpVWoxZ0lQveU3ec14sr4HWlQ/s1058/1000015526.jpg" alt="Handala Medal">
+          <div class="product-title" data-prod="title6">ميدالية حنظلة</div>
+          <div class="product-desc" data-prod="desc6">ميدالية تحكي عن الم الطفل الفلسطيني</div>
+          <div class="product-price">₺200</div>
+          <div class="product-actions">
+            <button class="buy-btn" onclick="event.stopPropagation(); orderOnWhatsApp(this)">اطلب الآن</button>
+            <button class="share-btn" onclick="event.stopPropagation(); shareProduct(this)">📤 مشاركة</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT PAGE -->
+  <div id="about" class="page-section">
+    <div class="page">
+      <h1 class="page-title" id="about-title">قصتنا</h1>
+      <p class="subtitle" id="about-subtitle">من القلب إلى القلب.. حكاية وطن في كل تفصيلة</p>
+
+      <div class="about-content">
+        <div class="founder-name">
+          <span id="founder-name">المؤسس: أيهم (Ayham)</span>
+        </div>
+        
+        <div class="founder-quote" id="founder-quote">
+          "فلسطين ليست مجرد أرض، إنها هوية تسكن القلب.. وكل قطعة نصنعها تحمل جزءاً من هذه الهوية"
+        </div>
+        
+        <p class="story-text" id="story-text-1">
+          في زاوية صغيرة من هذا العالم الكبير، وُلدت فكرة "We Love Palestine" على يد المؤسس <strong>أيهم (Ayham)</strong>، شاب فلسطيني آمن بأن الجمال يمكن أن يكون رسالة. بدأ الحلم بقلادة بسيطة تحمل خريطة فلسطين، ثم تطور ليصبح مجموعة متكاملة من الميداليات والإكسسوارات التي تحكي قصة وطن.
+        </p>
+        
+        <p class="story-text" id="story-text-2">
+          كل قطعة في متجرنا ليست مجرد إكسسوار عادي، بل هي رسالة حب، قصة صمود، وذاكرة لا تموت. نصنع مجوهراتنا بعناية فائقة، مستوحاة من رموز فلسطين الخالدة: من خريطة فلسطين، إلى مفتاح العودة، ومن قبة الصخرة المشرفة، إلى حنظلة الذي يروي حكاية الطفولة الفلسطينية.
+        </p>
+        
+        <p class="story-text" id="story-text-3">
+          نؤمن بأن حمل هذه القطع ليس مجرد زينة، بل هو تعبير عن الانتماء، وإعلان حب لا يتزعزع لفلسطين. شكراً لكم لأنكم جزء من هذه الرحلة، ورفقاء دربنا في نشر رسالة الجمال والأمل.
+        </p>
+        
+        <p class="story-text" style="color: #4a7a4a; font-weight: bold; text-align: center;" id="story-signature">
+          معاً نحب فلسطين 🇵🇸
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT PAGE -->
+  <div id="contact" class="page-section">
+    <div class="page">
+      <h1 class="page-title" id="contact-title">تواصل معنا</h1>
+      <p class="subtitle" id="contact-subtitle">يسعدنا سماعك — اختر الطريقة المناسبة لك</p>
+
+      <div class="cards">
+        <a class="card" href="mailto:welovepalestineservice@gmail.com">
+          <div class="icon">✉️</div>
+          <div class="info">
+            <h3 id="contact-email-title">البريد الإلكتروني</h3>
+            <p>welovepalestineservice@gmail.com</p>
+          </div>
+          <span class="arrow">←</span>
+        </a>
+
+        <a class="card" href="tel:+905538144941">
+          <div class="icon">📞</div>
+          <div class="info">
+            <h3 id="contact-phone-title">الهاتف</h3>
+            <p>+90 553 814 49 41</p>
+          </div>
+          <span class="arrow">←</span>
+        </a>
+
+        <a class="card" href="https://wa.me/905538144941" target="_blank">
+          <div class="icon">💬</div>
+          <div class="info">
+            <h3 id="contact-wa-title">واتساب</h3>
+            <p id="contact-wa-desc">راسلنا مباشرة على واتساب</p>
+          </div>
+          <span class="arrow">←</span>
+        </a>
+
+        <a class="card" href="https://www.instagram.com/ps_abo_ibrahim?igsh=MjJ6eDVzMGt3Mmkw" target="_blank">
+          <div class="icon">📸</div>
+          <div class="info">
+            <h3 id="contact-ig-title">إنستغرام</h3>
+            <p id="contact-ig-desc">تابعنا على إنستغرام</p>
+          </div>
+          <span class="arrow">←</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Multi-language dictionary (مختصر للاختصار - نفس المحتوى السابق)
+    const translations = {
+      ar: {
+        home_title: "أهلاً بكم في زاوية الأرض.. حيثُ نحملُ الوطن في تفاصيلنا الصغيرة",
+        home_sub: "اكتشف مجموعتنا المختارة من الميداليات والإكسسوارات التي صُنعت بحب، لتبقى فلسطين رفيقة دربك أينما كنت",
+        home_tag: "نحب فلسطين 🇵🇸",
+        products_title: "منتجاتنا",
+        products_sub: "إرثٌ يُقتنى.. وفخرٌ يُرتدى",
+        about_title: "قصتنا",
+        about_sub: "من القلب إلى القلب.. حكاية وطن في كل تفصيلة",
+        founder_name: "المؤسس: أيهم (Ayham)",
+        founder_quote: "فلسطين ليست مجرد أرض، إنها هوية تسكن القلب.. وكل قطعة نصنعها تحمل جزءاً من هذه الهوية",
+        story_text_1: "في زاوية صغيرة من هذا العالم الكبير، وُلدت فكرة \"We Love Palestine\" على يد المؤسس <strong>أيهم (Ayham)</strong>، شاب فلسطيني آمن بأن الجمال يمكن أن يكون رسالة. بدأ الحلم بقلادة بسيطة تحمل خريطة فلسطين، ثم تطور ليصبح مجموعة متكاملة من الميداليات والإكسسوارات التي تحكي قصة وطن.",
+        story_text_2: "كل قطعة في متجرنا ليست مجرد إكسسوار عادي، بل هي رسالة حب، قصة صمود، وذاكرة لا تموت. نصنع مجوهراتنا بعناية فائقة، مستوحاة من رموز فلسطين الخالدة: من خريطة فلسطين، إلى مفتاح العودة، ومن قبة الصخرة المشرفة، إلى حنظلة الذي يروي حكاية الطفولة الفلسطينية.",
+        story_text_3: "نؤمن بأن حمل هذه القطع ليس مجرد زينة، بل هو تعبير عن الانتماء، وإعلان حب لا يتزعزع لفلسطين. شكراً لكم لأنكم جزء من هذه الرحلة، ورفقاء دربنا في نشر رسالة الجمال والأمل.",
+        story_signature: "معاً نحب فلسطين 🇵🇸",
+        contact_title: "تواصل معنا",
+        contact_sub: "يسعدنا سماعك — اختر الطريقة المناسبة لك",
+        prod1_title: "قلادة فلسطين",
+        prod1_desc: "قلادة فلسطين فضية اللون",
+        prod2_title: "اسوارة فلسطين",
+        prod2_desc: "اسوارة خريطة فلسطين",
+        prod3_title: "ميدالية خريطة ومفتاح",
+        prod3_desc: "ميدالية مفتاح حق العودة",
+        prod4_title: "ميدالية خريطة فلسطين",
+        prod4_desc: "ميدالية تذكرنا بفلسطين",
+        prod5_title: "ميدالية قبة الصخرة",
+        prod5_desc: "قبة الصخرة مع علم فلسطين",
+        prod6_title: "ميدالية حنظلة",
+        prod6_desc: "ميدالية تحكي عن الم الطفل الفلسطيني",
+        contact_email: "البريد الإلكتروني",
+        contact_phone: "الهاتف",
+        contact_wa: "واتساب",
+        contact_wa_desc: "راسلنا مباشرة على واتساب",
+        contact_ig: "إنستغرام",
+        contact_ig_desc: "تابعنا على إنستغرام",
+        alert_buy: "شكراً لاهتمامك! سيتم إضافة المنتج قريباً",
+        nav_home: "الرئيسية",
+        nav_products: "المنتجات",
+        nav_about: "قصتنا",
+        nav_contact: "تواصل معنا"
+      },
+      tr: {
+        home_title: "Hoş Geldiniz",
+        home_sub: "Bu bizim ilk sitemiz",
+        home_tag: "Filistin'i Seviyoruz 🇵🇸",
+        products_title: "Ürünlerimiz",
+        products_sub: "Filistin ruhundan ilham alan ürünler sunuyoruz",
+        about_title: "Hikayemiz",
+        about_sub: "Kalpten kalbe.. her detayda bir vatan hikayesi",
+        founder_name: "Kurucu: Ayham",
+        founder_quote: "Filistin sadece bir toprak değil, kalbimize yerleşmiş bir kimliktir.. Ürettiğimiz her parça bu kimliğin bir parçasını taşır",
+        story_text_1: "Dünyanın küçük bir köşesinde, \"We Love Palestine\" fikri, güzelliğin bir mesaj olabileceğine inanan Filistinli genç <strong>Ayham</strong> tarafından doğdu. Hayal, Filistin haritası taşıyan basit bir kolyeyle başladı ve bir vatanın hikayesini anlatan madalya ve aksesuarlardan oluşan kapsamlı bir koleksiyona dönüştü.",
+        story_text_2: "Mağazamızdaki her parça sıradan bir aksesuar değil; bir aşk mektubu, bir direniş hikayesi ve asla ölmeyen bir hafızadır. Takılarımızı, Filistin'in ebedi sembollerinden ilham alarak özenle üretiyoruz: Filistin haritasından, Geri Dönüş Anahtarı'na, Kubbet-üs Sahra'dan, Filistinli çocuğun hikayesini anlatan Handala'ya kadar.",
+        story_text_3: "Bu parçaları taşımanın sadece bir süs olmadığına, aidiyetin bir ifadesi ve Filistin'e sarsılmaz bir sevgi ilanı olduğuna inanıyoruz. Bu yolculuğun bir parçası olduğunuz, güzellik ve umut mesajımızı yaymada yol arkadaşımız olduğunuz için teşekkür ederiz.",
+        story_signature: "Birlikte Filistin'i Seviyoruz 🇵🇸",
+        contact_title: "Bize Ulaşın",
+        contact_sub: "Sizi duymaktan mutluluk duyarız — size uygun yöntemi seçin",
+        prod1_title: "Filistin Kolye",
+        prod1_desc: "Gümüş renkli Filistin kolyesi",
+        prod2_title: "Filistin Bileklik",
+        prod2_desc: "Filistin haritası bileklik",
+        prod3_title: "Harita ve Anahtar Madalyon",
+        prod3_desc: "Geri Dönüş Hakkı anahtarı madalyonu",
+        prod4_title: "Filistin Haritası Madalyon",
+        prod4_desc: "Bize Filistin'i hatırlatan madalyon",
+        prod5_title: "Kubbetüs Sahra Madalyonu",
+        prod5_desc: "Filistin bayrağı ile Kubbetüs Sahra",
+        prod6_title: "Handala Madalyonu",
+        prod6_desc: "Filistinli çocuğun acısını anlatan madalyon",
+        contact_email: "E-posta",
+        contact_phone: "Telefon",
+        contact_wa: "WhatsApp",
+        contact_wa_desc: "Bize WhatsApp'tan yazın",
+        contact_ig: "Instagram",
+        contact_ig_desc: "Bizi Instagram'da takip edin",
+        alert_buy: "İlginiz için teşekkürler! Ürün yakında eklenecek.",
+        nav_home: "Ana Sayfa",
+        nav_products: "Ürünler",
+        nav_about: "Hikayemiz",
+        nav_contact: "İletişim"
+      },
+      en: {
+        home_title: "Welcome",
+        home_sub: "This is our first website",
+        home_tag: "We Love Palestine 🇵🇸",
+        products_title: "Our Products",
+        products_sub: "We offer products inspired by the spirit of Palestine",
+        about_title: "Our Story",
+        about_sub: "From heart to heart.. a homeland story in every detail",
+        founder_name: "Founder: Ayham",
+        founder_quote: "Palestine is not just a land, it's an identity that resides in the heart.. and every piece we make carries a part of this identity",
+        story_text_1: "In a small corner of this big world, the idea of \"We Love Palestine\" was born by the founder <strong>Ayham</strong>, a young Palestinian who believed that beauty can be a message. The dream began with a simple necklace carrying the map of Palestine, then evolved into a complete collection of medals and accessories that tell the story of a homeland.",
+        story_text_2: "Every piece in our store is not just an ordinary accessory, but a love letter, a story of resilience, and a memory that never dies. We craft our jewelry with great care, inspired by Palestine's eternal symbols: from the map of Palestine, to the Key of Return, from the Dome of the Rock, to Handala who tells the story of Palestinian childhood.",
+        story_text_3: "We believe that wearing these pieces is not just decoration, but an expression of belonging, and a declaration of unwavering love for Palestine. Thank you for being part of this journey, and for being our companions in spreading the message of beauty and hope.",
+        story_signature: "Together We Love Palestine 🇵🇸",
+        contact_title: "Contact Us",
+        contact_sub: "We're happy to hear from you — choose your preferred method",
+        prod1_title: "Palestine Necklace",
+        prod1_desc: "Silver-colored Palestine necklace",
+        prod2_title: "Palestine Bracelet",
+        prod2_desc: "Palestine map bracelet",
+        prod3_title: "Map & Key Medal",
+        prod3_desc: "Right of Return key medal",
+        prod4_title: "Palestine Map Medal",
+        prod4_desc: "Medal that reminds us of Palestine",
+        prod5_title: "Dome of the Rock Medal",
+        prod5_desc: "Dome of the Rock with Palestine flag",
+        prod6_title: "Handala Medal",
+        prod6_desc: "Medal depicting the pain of Palestinian child",
+        contact_email: "Email",
+        contact_phone: "Phone",
+        contact_wa: "WhatsApp",
+        contact_wa_desc: "Message us on WhatsApp",
+        contact_ig: "Instagram",
+        contact_ig_desc: "Follow us on Instagram",
+        alert_buy: "Thank you for your interest! The product will be added soon.",
+        nav_home: "Home",
+        nav_products: "Products",
+        nav_about: "Our Story",
+        nav_contact: "Contact Us"
+      }
+    };
+
+    let currentLang = "ar";
+    const pages = ['home', 'products', 'about', 'contact'];
+    let currentPageIndex = 0;
+
+    function getTranslation(key) {
+      return translations[currentLang][key] || translations.ar[key] || key;
+    }
+
+    function updateLanguageUI() {
+      document.getElementById("home-title").innerText = getTranslation("home_title");
+      document.getElementById("home-subtitle").innerText = getTranslation("home_sub");
+      document.getElementById("home-tagline").innerText = getTranslation("home_tag");
+      document.getElementById("products-title").innerText = getTranslation("products_title");
+      document.getElementById("products-subtitle").innerText = getTranslation("products_sub");
+      document.getElementById("about-title").innerText = getTranslation("about_title");
+      document.getElementById("about-subtitle").innerText = getTranslation("about_sub");
+      document.getElementById("founder-name").innerHTML = getTranslation("founder_name");
+      document.getElementById("founder-quote").innerText = getTranslation("founder_quote");
+      document.getElementById("story-text-1").innerHTML = getTranslation("story_text_1");
+      document.getElementById("story-text-2").innerHTML = getTranslation("story_text_2");
+      document.getElementById("story-text-3").innerHTML = getTranslation("story_text_3");
+      document.getElementById("story-signature").innerHTML = getTranslation("story_signature");
+      document.getElementById("contact-title").innerText = getTranslation("contact_title");
+      document.getElementById("contact-subtitle").innerText = getTranslation("contact_sub");
+      
+      const prodTitles = ["title1", "title2", "title3", "title4", "title5", "title6"];
+      const prodDesc = ["desc1", "desc2", "desc3", "desc4", "desc5", "desc6"];
+      for(let i=0; i<prodTitles.length; i++) {
+        let titleKey = `prod${i+1}_title`;
+        let descKey = `prod${i+1}_desc`;
+        const titleElem = document.querySelector(`[data-prod="${prodTitles[i]}"]`);
+        const descElem = document.querySelector(`[data-prod="${prodDesc[i]}"]`);
+        if(titleElem) titleElem.innerText = getTranslation(titleKey);
+        if(descElem) descElem.innerText = getTranslation(descKey);
+      }
+      
+      document.getElementById("contact-email-title").innerText = getTranslation("contact_email");
+      document.getElementById("contact-phone-title").innerText = getTranslation("contact_phone");
+      document.getElementById("contact-wa-title").innerText = getTranslation("contact_wa");
+      document.getElementById("contact-wa-desc").innerText = getTranslation("contact_wa_desc");
+      document.getElementById("contact-ig-title").innerText = getTranslation("contact_ig");
+      document.getElementById("contact-ig-desc").innerText = getTranslation("contact_ig_desc");
+      
+      const navLinks = document.querySelectorAll("nav > a:not(.lang-switch a)");
+      if(navLinks[0]) navLinks[0].innerText = getTranslation("nav_home");
+      if(navLinks[1]) navLinks[1].innerText = getTranslation("nav_products");
+      if(navLinks[2]) navLinks[2].innerText = getTranslation("nav_about");
+      if(navLinks[3]) navLinks[3].innerText = getTranslation("nav_contact");
+      
+      document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.classList.remove("active-lang");
+        if(btn.getAttribute("data-lang") === currentLang) {
+          btn.classList.add("active-lang");
+        }
+      });
+      
+      if(currentLang === 'ar') {
+        document.documentElement.lang = "ar";
+        document.getElementById("contact").style.direction = "rtl";
+        document.getElementById("products").style.direction = "rtl";
+        document.getElementById("about").style.direction = "rtl";
+        document.getElementById("home").style.direction = "ltr";
+      } else {
+        document.getElementById("contact").style.direction = "ltr";
+        document.getElementById("products").style.direction = "ltr";
+        document.getElementById("about").style.direction = "ltr";
+        document.getElementById("home").style.direction = "ltr";
+      }
+    }
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      updateLanguageUI();
+      localStorage.setItem("preferredLang", lang);
+    }
+
+    function scrollToPage(pageId, event) {
+      if (event) event.preventDefault();
+      const targetSection = document.getElementById(pageId);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+      updateActiveNav(pageId);
+      currentPageIndex = pages.indexOf(pageId);
+      updateDots();
+    }
+
+    function scrollToNextPage() {
+      if (currentPageIndex < pages.length - 1) {
+        const nextPage = document.getElementById(pages[currentPageIndex + 1]);
+        if (nextPage) {
+          nextPage.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+
+    function updateActiveNav(pageId) {
+      document.querySelectorAll('nav a:not(.lang-switch a)').forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('data-nav') === pageId) {
+          a.classList.add('active');
+        }
+      });
+    }
+
+    function updateDots() {
+      const dots = document.querySelectorAll('.page-dot');
+      dots.forEach((dot, index) => {
+        if (index === currentPageIndex) {
+          dot.classList.add('active-dot');
+        } else {
+          dot.classList.remove('active-dot');
+        }
+      });
+    }
+
+    function handleScroll() {
+      const sections = document.querySelectorAll('.page-section');
+      let current = '';
+      
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 150 && rect.bottom >= 150) {
+          current = section.id;
+        }
+      });
+      
+      if (current) {
+        updateActiveNav(current);
+        currentPageIndex = pages.indexOf(current);
+        updateDots();
+      }
+      
+      const scrollTopBtn = document.getElementById('scrollTopBtn');
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    }
+
+    function initProductObserver() {
+      const productCards = document.querySelectorAll('.product-card');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      productCards.forEach(card => {
+        observer.observe(card);
+      });
+    }
+
+    // ========== دوال الشراء والمشاركة ==========
+    
+    // الدالة المسؤولة عن الطلب عبر واتساب
+    function orderOnWhatsApp(buttonElement) {
+      const productCard = buttonElement.closest('.product-card');
+      if (!productCard) return;
+      
+      const productName = productCard.querySelector('.product-title')?.innerText || 'منتج';
+      const productPrice = productCard.querySelector('.product-price')?.innerText || '₺0';
+      
+      const phoneNumber = "905538144941";
+      
+      const message = `🛍️ مرحباً، أريد شراء:
+📦 المنتج: ${productName}
+💰 السعر: ${productPrice}
+📍 الرجاء تأكيد التوفر وطريقة الدفع.`;
+      
+      const encodedMessage = encodeURIComponent(message);
+      window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+      
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'begin_checkout', {
+          'event_category': 'ecommerce',
+          'event_label': productName,
+          'value': productPrice
+        });
+      }
+    }
+    
+    // الدالة المسؤولة عن مشاركة المنتج (مع رابط مخصص للمنتج)
+    function shareProduct(buttonElement) {
+      const productCard = buttonElement.closest('.product-card');
+      if (!productCard) return;
+      
+      const productName = productCard.querySelector('.product-title')?.innerText || 'منتج';
+      const productPrice = productCard.querySelector('.product-price')?.innerText || '₺0';
+      const productId = productCard.id; // مثلاً: product-1, product-2...
+      
+      // رابط الموقع مع معرف المنتج
+      const siteUrl = `https://fun25320-svg.github.io/welovepalestine/#${productId}`;
+      
+      const shareText = `🛍️ اكتشف منتج ${productName} بسعر ${productPrice} في متجر We Love Palestine! 🇵🇸\n${siteUrl}`;
+      
+      if (navigator.share) {
+        navigator.share({
+          title: productName,
+          text: `🛍️ اكتشف منتج ${productName} في متجر We Love Palestine!`,
+          url: siteUrl
+        }).catch(err => {
+          console.log('Error sharing:', err);
+          fallbackShare(shareText);
+        });
+      } else {
+        fallbackShare(shareText);
+      }
+      
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'share', {
+          'event_category': 'engagement',
+          'event_label': productName
+        });
+      }
+    }
+    
+    function fallbackShare(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert('📋 تم نسخ رابط المنتج! يمكنك مشاركته الآن.');
+      }).catch(() => {
+        alert('📤 يمكنك مشاركة المنتج: ' + text);
+      });
+    }
+    
+    // ========== معالجة الرابط عند فتح الصفحة ==========
+    function handleProductHash() {
+      const hash = window.location.hash; // مثلاً: "#product-3"
+      if (hash && hash.startsWith('#product-')) {
+        const targetProduct = document.querySelector(hash);
+        if (targetProduct) {
+          // الانتظار قليلاً حتى تكتمل تحميل الصفحة
+          setTimeout(() => {
+            // التمرير للمنتج
+            targetProduct.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            // إضافة تأثير تمييز
+            targetProduct.classList.add('highlight');
+            // إزالة التمييز بعد 3 ثواني
+            setTimeout(() => {
+              targetProduct.classList.remove('highlight');
+            }, 3000);
+          }, 500);
+        }
+      }
+    }
+    
+    // ========== نهاية الدوال ==========
+
+    const savedLang = localStorage.getItem("preferredLang");
+    if(savedLang && translations[savedLang]) {
+      currentLang = savedLang;
+    }
+    updateLanguageUI();
+    
+    window.addEventListener('scroll', handleScroll);
+    initProductObserver();
+    
+    window.scrollToPage = scrollToPage;
+    window.setLanguage = setLanguage;
+    window.getTranslation = getTranslation;
+    window.scrollToNextPage = scrollToNextPage;
+    window.orderOnWhatsApp = orderOnWhatsApp;
+    window.shareProduct = shareProduct;
+    
+    // معالجة رابط المنتج عند فتح الصفحة
+    window.addEventListener('DOMContentLoaded', handleProductHash);
+    // أيضاً في حالة تغيير الرابط بعد تحميل الصفحة
+    window.addEventListener('hashchange', handleProductHash);
+  </script>
+</body>
+</html>
