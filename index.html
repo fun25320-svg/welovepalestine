@@ -582,34 +582,6 @@
       .product-actions { flex-direction: column; gap: 0.5rem; }
       .share-btn { width: 100%; justify-content: center; }
     }
-    /* المثلث الأحمر المتجه للأسفل (رأسه للأسفل) */
-.downward-red-triangle {
-  width: 0;
-  height: 0;
-  margin: 2rem auto;
-  border-style: solid;
-  border-width: 70px 40px 0 40px;
-  border-color: #e00 transparent transparent transparent;
-  animation: trianglePulse 1.2s ease-in-out infinite alternate;
-  filter: drop-shadow(0 -5px 10px rgba(255,0,0,0.5));
-}
-
-@keyframes trianglePulse {
-  0% {
-    filter: drop-shadow(0 -5px 5px #e00) drop-shadow(0 -8px 10px #e00);
-    opacity: 0.9;
-  }
-  100% {
-    filter: drop-shadow(0 -10px 20px #ff0000) drop-shadow(0 -15px 35px #ff3300);
-    opacity: 1;
-  }
-}
-
-@media (max-width: 650px) {
-  .downward-red-triangle {
-    border-width: 50px 30px 0 30px;
-  }
-}
   </style>
 </head>
 <body>
@@ -713,7 +685,7 @@
     <div class="flag-stripe"></div>
     <h1 id="home-title">أهلاً بكم في زاوية الأرض.. حيثُ نحملُ الوطن في تفاصيلنا الصغيرة</h1>
     <h2 id="home-subtitle">اكتشف مجموعتنا المختارة من الميداليات والإكسسوارات التي صُنعت بحب، لتبقى فلسطين رفيقة دربك أينما كنت</h2>
-   <div class="downward-red-triangle"></div> 
+    <div class="divider"></div>
     <p class="tagline" id="home-tagline">نحب فلسطين 🇵🇸</p>
     <div class="scroll-down" onclick="scrollToNextPage()"><span></span></div>
   </section>
