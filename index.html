@@ -583,23 +583,33 @@
       .share-btn { width: 100%; justify-content: center; }
     }
     /* المثلث الأحمر المتجه للأسفل (رأسه للأسفل) */
-    .downward-red-triangle {
-      width: 0;
-      height: 0;
-      margin: 2rem auto;
-      border-style: solid;
-      border-width: 70px 40px 0 40px;
-      border-color: #e00 transparent transparent transparent;
-      animation: trianglePulse 1.2s ease-in-out infinite alternate;
-      filter: drop-shadow(0 -5px 10px rgba(255,0,0,0.5));
-    }
-    @keyframes trianglePulse {
-      0% { filter: drop-shadow(0 -5px 5px #e00) drop-shadow(0 -8px 10px #e00); opacity: 0.9; }
-      100% { filter: drop-shadow(0 -10px 20px #ff0000) drop-shadow(0 -15px 35px #ff3300); opacity: 1; }
-    }
-    @media (max-width: 650px) {
-      .downward-red-triangle { border-width: 50px 30px 0 30px; }
-    }
+.downward-red-triangle {
+  width: 0;
+  height: 0;
+  margin: 2rem auto;
+  border-style: solid;
+  border-width: 70px 40px 0 40px;
+  border-color: #e00 transparent transparent transparent;
+  animation: trianglePulse 1.2s ease-in-out infinite alternate;
+  filter: drop-shadow(0 -5px 10px rgba(255,0,0,0.5));
+}
+
+@keyframes trianglePulse {
+  0% {
+    filter: drop-shadow(0 -5px 5px #e00) drop-shadow(0 -8px 10px #e00);
+    opacity: 0.9;
+  }
+  100% {
+    filter: drop-shadow(0 -10px 20px #ff0000) drop-shadow(0 -15px 35px #ff3300);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 650px) {
+  .downward-red-triangle {
+    border-width: 50px 30px 0 30px;
+  }
+}
   </style>
 </head>
 <body>
@@ -813,9 +823,9 @@
       <h1 class="page-title" id="contact-title">تواصل معنا</h1>
       <p class="subtitle" id="contact-subtitle">يسعدنا سماعك — اختر الطريقة المناسبة لك</p>
       <div class="cards">
-        <a class="card" href="/cdn-cgi/l/email-protection#fd8a9891928b988d9c91988e89949398bd9a909c9491d39e9290"><div class="icon">✉️</div><div class="info"><h3 id="contact-email-title">البريد الإلكتروني</h3><p><span class="__cf_email__" data-cfemail="7106141d1e071401101d140205181f1431161c10181d5f121e1c">[email&#160;protected]</span></p></div><span class="arrow">←</span></a>
-        <a class="card" href="tel:+306906085378"><div class="icon">📞</div><div class="info"><h3 id="contact-phone-title">الهاتف</h3><p>+30 690 608 5378</p></div><span class="arrow">←</span></a>
-        <a class="card" href="https://wa.me/306906085378" target="_blank" rel="noopener noreferrer"><div class="icon">💬</div><div class="info"><h3 id="contact-wa-title">واتساب</h3><p id="contact-wa-desc">راسلنا مباشرة على واتساب</p></div><span class="arrow">←</span></a>
+        <a class="card" href="/cdn-cgi/l/email-protection#295e4c45465f4c5948454c5a5d40474c5a4c5b5f404a4c694e44484045074a4644"><div class="icon">✉️</div><div class="info"><h3 id="contact-email-title">البريد الإلكتروني</h3><p><span class="__cf_email__" data-cfemail="8cfbe9e0e3fae9fcede0e9fff8e5e2e9ffe9fefae5efe9ccebe1ede5e0a2efe3e1">[email&#160;protected]</span></p></div><span class="arrow">←</span></a>
+        <a class="card" href="tel:+30 690 608 53"><div class="icon">📞</div><div class="info"><h3 id="contact-phone-title">الهاتف</h3><p>+30 690 608 5378</p></div><span class="arrow">←</span></a>
+        <a class="card" href="https://wa.me/30 690 608 5378" target="_blank" rel="noopener noreferrer"><div class="icon">💬</div><div class="info"><h3 id="contact-wa-title">واتساب</h3><p id="contact-wa-desc">راسلنا مباشرة على واتساب</p></div><span class="arrow">←</span></a>
         <a class="card" href="https://www.instagram.com/ps_abo_ibrahim?igsh=MjJ6eDVzMGt3Mmkw" target="_blank" rel="noopener noreferrer"><div class="icon">📸</div><div class="info"><h3 id="contact-ig-title">إنستغرام</h3><p id="contact-ig-desc">تابعنا على إنستغرام</p></div><span class="arrow">←</span></a>
       </div>
     </div>
@@ -1147,16 +1157,33 @@
       if (cartTotalSpan) cartTotalSpan.innerText = `الإجمالي: ₺${total}`;
     }
     
-    function sendCartWhatsApp() {
+    async function saveOrderToSupabase(cartItems, total) {
+      if (!currentUser) return;
+      try {
+        await sbClient.from('orders').insert({
+          user_id: currentUser.id,
+          user_email: currentUser.email,
+          items: cartItems,
+          total: total,
+          created_at: new Date().toISOString()
+        });
+      } catch(e) {
+        console.log('خطأ في حفظ الطلب:', e);
+      }
+    }
+
+    async function sendCartWhatsApp() {
       if (cart.length === 0) {
         alert('السلة فارغة، أضف منتجات أولاً.');
         return;
       }
+      const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      if (currentUser) {
+        await saveOrderToSupabase([...cart], total);
+      }
       let message = '🛍️ طلب شراء من متجر We Love Palestine:\n\n';
-      let total = 0;
       cart.forEach(item => {
         const itemTotal = item.price * item.quantity;
-        total += itemTotal;
         message += `📦 ${item.name} - السعر: ${item.price} ₺ × ${item.quantity} = ${itemTotal} ₺\n`;
       });
       message += `\n💰 الإجمالي الكلي: ${total} ₺\n\n📍 يرجى تأكيد التوفر وطريقة الدفع.`;
@@ -1299,7 +1326,6 @@
     window.addToCart = addToCart;
     window.removeFromCart = removeFromCart;
 
-    // ربط زر الدخول بشكل صريح
     document.getElementById('userNavBtn').addEventListener('click', function() {
       handleUserBtn();
     });
@@ -1315,60 +1341,93 @@
     window.addEventListener('DOMContentLoaded', handleProductHash);
     window.addEventListener('hashchange', handleProductHash);
 
-    // ==================== SUPABASE ====================
+    // ==================== SUPABASE WITH FIXED GOOGLE AUTH ====================
     const SUPABASE_URL = 'https://xztrvadmfvwblerdlqen.supabase.co';
     const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh6dHJ2YWRtZnZ3YmxlcmRscWVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUzMDUwNTUsImV4cCI6MjA5MDg4MTA1NX0.BWH-IKSB37ho7AjNcr33rHz-XR8_Ch9rKYKkl2sITo4';
-
-    // ✅ إنشاء sbClient مع تعطيل PKCE — ضروري لـ GitHub Pages (static sites)
-    const sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {
-      auth: {
-        flowType: 'implicit',
-        detectSessionInUrl: true,
-        persistSession: true,
-        autoRefreshToken: true,
-      }
-    });
+    const sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
     var currentUser = null;
     var authMode = 'login';
 
-    // ==================== Google OAuth ====================
-    async function signInWithGoogle() {
-      const { error } = await sbClient.auth.signInWithOAuth({
-        provider: 'google',
-        options: {
-          redirectTo: 'https://fun25320-svg.github.io/welovepalestine/'
+    // دالة معالجة إعادة التوجيه من Google
+    async function handleAuthRedirect() {
+      const hash = window.location.hash;
+      if (hash && hash.includes('access_token')) {
+        console.log('🔄 معالجة العودة من Google...');
+        
+        const params = new URLSearchParams(hash.substring(1));
+        const access_token = params.get('access_token');
+        const refresh_token = params.get('refresh_token');
+        
+        if (access_token && refresh_token) {
+          const { data, error } = await sbClient.auth.setSession({
+            access_token: access_token,
+            refresh_token: refresh_token
+          });
+          
+          if (error) {
+            console.error('❌ خطأ:', error);
+          } else if (data?.user) {
+            console.log('✅ تم تسجيل الدخول بنجاح:', data.user.email);
+            currentUser = data.user;
+            updateUserBtn();
+            window.history.replaceState({}, document.title, window.location.pathname);
+            closeAuthModal();
+            alert('✅ تم تسجيل الدخول بنجاح عبر Google!');
+          }
         }
-      });
-      if (error) alert('حدث خطأ: ' + error.message);
+      }
     }
-    window.signInWithGoogle = signInWithGoogle;
 
+    // دالة تسجيل الدخول بـ Google
+    async function signInWithGoogle() {
+      try {
+        const { error } = await sbClient.auth.signInWithOAuth({
+          provider: 'google',
+          options: {
+            redirectTo: window.location.origin + window.location.pathname,
+          }
+        });
+        
+        if (error) {
+          console.error('❌ خطأ:', error);
+          alert('حدث خطأ: ' + error.message);
+        }
+      } catch (err) {
+        console.error('❌ استثناء:', err);
+        alert('حدث خطأ غير متوقع');
+      }
+    }
+
+    // التحقق من الجلسة عند التحميل
     async function initAuth() {
-      // الـ implicit flow يُعيد التوكن في الـ hash fragment (#access_token=...)
-      // sbClient يكتشفه تلقائياً بسبب detectSessionInUrl: true
+      await handleAuthRedirect();
+      
       const { data: { session } } = await sbClient.auth.getSession();
       if (session) {
         currentUser = session.user;
         updateUserBtn();
-        // تنظيف الـ hash من الـ URL
-        if (window.location.hash.includes('access_token')) {
-          window.history.replaceState({}, document.title, window.location.pathname);
-        }
       }
-
-      sbClient.auth.onAuthStateChange((_event, session) => {
-        currentUser = session?.user || null;
-        updateUserBtn();
+      
+      sbClient.auth.onAuthStateChange((event, session) => {
+        console.log('📢 حدث:', event);
+        if (event === 'SIGNED_IN' && session) {
+          currentUser = session.user;
+          updateUserBtn();
+          closeAuthModal();
+          alert('✅ تم تسجيل الدخول بنجاح!');
+        } else if (event === 'SIGNED_OUT') {
+          currentUser = null;
+          updateUserBtn();
+        }
       });
     }
-    initAuth();
 
     function updateUserBtn() {
       const btnText = document.getElementById('userBtnText');
       if (!btnText) return;
       const loginLabels = { ar: 'دخول', en: 'Login', tr: 'Giriş' };
-      if (typeof currentUser !== 'undefined' && currentUser) {
+      if (currentUser) {
         const short = currentUser.email.split('@')[0];
         btnText.textContent = short;
       } else {
@@ -1463,29 +1522,12 @@
       alert('تم تسجيل الخروج 👋');
     }
 
-    // حفظ الطلب في Supabase عند الإرسال
-    async function saveOrderToSupabase(cartItems, total) {
-      if (!currentUser) return;
-      try {
-        await sbClient.from('orders').insert({
-          user_id: currentUser.id,
-          user_email: currentUser.email,
-          items: cartItems,
-          total: total,
-          created_at: new Date().toISOString()
-        });
-      } catch(e) {
-        console.log('خطأ في حفظ الطلب:', e);
-      }
-    }
-
-    // ==================== FIX 2: إصلاح supabase → sbClient في openOrdersModal ====================
     async function openOrdersModal() {
       document.getElementById('ordersModal').classList.add('open');
       document.getElementById('ordersList').innerHTML = '<div class="no-orders">⏳ جاري التحميل...</div>';
 
       try {
-        const { data, error } = await sbClient  // ✅ تم الإصلاح: كان "supabase" خطأ
+        const { data, error } = await sbClient
           .from('orders')
           .select('*')
           .eq('user_id', currentUser.id)
@@ -1519,29 +1561,7 @@
       document.getElementById('ordersModal').classList.remove('open');
     }
 
-    // تعديل sendCartWhatsApp لحفظ الطلب
-    const originalSendCartWhatsApp = sendCartWhatsApp;
-    window.sendCartWhatsApp = async function() {
-      if (cart.length === 0) {
-        alert('السلة فارغة، أضف منتجات أولاً.');
-        return;
-      }
-      const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-      // حفظ في Supabase إذا مسجل دخول
-      if (currentUser) {
-        await saveOrderToSupabase([...cart], total);
-      }
-      // إرسال واتساب
-      let message = '🛍️ طلب شراء من متجر We Love Palestine:\n\n';
-      cart.forEach(item => {
-        const itemTotal = item.price * item.quantity;
-        message += `📦 ${item.name} - السعر: ${item.price} ₺ × ${item.quantity} = ${itemTotal} ₺\n`;
-      });
-      message += `\n💰 الإجمالي الكلي: ${total} ₺\n\n📍 يرجى تأكيد التوفر وطريقة الدفع.`;
-      const encoded = encodeURIComponent(message);
-      window.open(`https://wa.me/306906085378?text=${encoded}`, '_blank');
-    };
-
+    window.signInWithGoogle = signInWithGoogle;
     window.openAuthModal = openAuthModal;
     window.closeAuthModal = closeAuthModal;
     window.switchTab = switchTab;
@@ -1550,12 +1570,13 @@
     window.openOrdersModal = openOrdersModal;
     window.closeOrdersModal = closeOrdersModal;
 
-    // Enter key للـ auth
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' && document.getElementById('authModal').classList.contains('open')) {
         handleAuth();
       }
     });
+
+    initAuth();
   </script>
   <style>
     .mobile-lang-dropdown-content button {
@@ -1567,7 +1588,10 @@
       width: 100%;
       cursor: pointer;
       font-family: inherit;
-      font-size: 0.85rem;
+    }
+    .mobile-lang-dropdown-content button:hover {
+      background: #2c4a2c;
+      color: white;
     }
   </style>
 </body>
