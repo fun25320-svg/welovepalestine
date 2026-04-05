@@ -813,7 +813,7 @@
       <h1 class="page-title" id="contact-title">تواصل معنا</h1>
       <p class="subtitle" id="contact-subtitle">يسعدنا سماعك — اختر الطريقة المناسبة لك</p>
       <div class="cards">
-        <a class="card" href="mailto:welovepalestine@gmail.com"><div class="icon">✉️</div><div class="info"><h3 id="contact-email-title">البريد الإلكتروني</h3><p>welovepalestine@gmail.com</p></div><span class="arrow">←</span></a>
+        <a class="card" href="/cdn-cgi/l/email-protection#fd8a9891928b988d9c91988e89949398bd9a909c9491d39e9290"><div class="icon">✉️</div><div class="info"><h3 id="contact-email-title">البريد الإلكتروني</h3><p><span class="__cf_email__" data-cfemail="7106141d1e071401101d140205181f1431161c10181d5f121e1c">[email&#160;protected]</span></p></div><span class="arrow">←</span></a>
         <a class="card" href="tel:+306906085378"><div class="icon">📞</div><div class="info"><h3 id="contact-phone-title">الهاتف</h3><p>+30 690 608 5378</p></div><span class="arrow">←</span></a>
         <a class="card" href="https://wa.me/306906085378" target="_blank" rel="noopener noreferrer"><div class="icon">💬</div><div class="info"><h3 id="contact-wa-title">واتساب</h3><p id="contact-wa-desc">راسلنا مباشرة على واتساب</p></div><span class="arrow">←</span></a>
         <a class="card" href="https://www.instagram.com/ps_abo_ibrahim?igsh=MjJ6eDVzMGt3Mmkw" target="_blank" rel="noopener noreferrer"><div class="icon">📸</div><div class="info"><h3 id="contact-ig-title">إنستغرام</h3><p id="contact-ig-desc">تابعنا على إنستغرام</p></div><span class="arrow">←</span></a>
@@ -821,7 +821,7 @@
     </div>
   </div>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // ------------------- الترجمة الكاملة (عربي، تركي، إنجليزي) -------------------
     const translations = {
       ar: {
@@ -1318,17 +1318,26 @@
     // ==================== SUPABASE ====================
     const SUPABASE_URL = 'https://xztrvadmfvwblerdlqen.supabase.co';
     const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh6dHJ2YWRtZnZ3YmxlcmRscWVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUzMDUwNTUsImV4cCI6MjA5MDg4MTA1NX0.BWH-IKSB37ho7AjNcr33rHz-XR8_Ch9rKYKkl2sITo4';
-    const sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    // ✅ إنشاء sbClient مع تعطيل PKCE — ضروري لـ GitHub Pages (static sites)
+    const sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {
+      auth: {
+        flowType: 'implicit',
+        detectSessionInUrl: true,
+        persistSession: true,
+        autoRefreshToken: true,
+      }
+    });
 
     var currentUser = null;
     var authMode = 'login';
 
-    // ==================== FIX 1: Google OAuth - initAuth محسّن ====================
+    // ==================== Google OAuth ====================
     async function signInWithGoogle() {
       const { error } = await sbClient.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: window.location.href
+          redirectTo: 'https://fun25320-svg.github.io/welovepalestine/'
         }
       });
       if (error) alert('حدث خطأ: ' + error.message);
@@ -1336,17 +1345,14 @@
     window.signInWithGoogle = signInWithGoogle;
 
     async function initAuth() {
-      // معالجة OAuth redirect: تبادل الكود من URL قبل جلب الجلسة
-      if (window.location.search.includes('code=') || window.location.hash.includes('access_token')) {
-        await sbClient.auth.getSession(); // يُشغّل تبادل التوكن
-      }
-
+      // الـ implicit flow يُعيد التوكن في الـ hash fragment (#access_token=...)
+      // sbClient يكتشفه تلقائياً بسبب detectSessionInUrl: true
       const { data: { session } } = await sbClient.auth.getSession();
       if (session) {
         currentUser = session.user;
         updateUserBtn();
-        // تنظيف الـ URL بعد OAuth redirect
-        if (window.history.replaceState) {
+        // تنظيف الـ hash من الـ URL
+        if (window.location.hash.includes('access_token')) {
           window.history.replaceState({}, document.title, window.location.pathname);
         }
       }
